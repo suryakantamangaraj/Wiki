@@ -3,23 +3,61 @@ sidebar_position: 1
 slug: /
 ---
 
-# Welcome to Surya Sourcebook
+# Welcome to the Surya Sourcebook
 
 ## Introduction
+
 ### Hey!👋 I'm [Surya](https://suryaraj.me)!
 
-This is my personal wiki
+#### This is the beginning of everything I know>>
 
-> :warning: Be aware, products can change over time. I do my best to keep up with the latest changes, but please understand that this won’t always be the case.
+## Why would I do this?
 
-## 📫 **Reach out to Me:**
+As someone who is constantly learning and taking notes, I have always struggled with keeping track of my information and knowledge. There are many times when I go to Google to find an answer to a question I asked years ago, and find a blog post, forum thread or tweet I wrote about that same issue. We forget, but the internet never does. A backup of everything we know would be interesting, wouldn't it? That's why I decided to create a personal wiki, also known as a "digital garden."
+
+## Who is this for?
+
+A personal wiki is a collection of information and knowledge that is curated and organised by an individual. This includes notes, documents, research, ideas, and anything else that I deem important or useful. I use my personal wiki as a tool for self-improvement and personal growth because it makes it easy for me to access and refer to my own knowledge and skills.
+
+Nevertheless! In view of the fact that this happens more often than I'd like to admit, sometimes it's useful to have pre-recorded versions of advice or comments that you're going to give people and you can link to them. So there's that as well.
+
+The index isn't explicitly a tutorial or self-help guide or even particularly interesting, but I hope that making it public will be more beneficial than harmful.
+
+## Key benefits
+
+One of the key benefits of my personal wiki is that it provides a central location for all of my information, making it easy to access and organize. This is especially helpful for me as someone who is constantly learning new things and wants to keep track of my progress. Additionally, my personal wiki can be used to create a personal knowledge base that can be shared with others, making it an ideal tool for collaboration and teamwork. 
+
+Another key benefit of my personal wiki is that it allows for the creation of a digital garden, where information can grow and evolve over the span. This is in contrast to traditional note-taking methods, where notes are often scattered and disconnected. With my personal wiki, information is linked and interconnected, allowing for easy navigation and discovery. This is particularly useful for me as someone who is working on long-term projects or research. 
+
+## First-time visitors
+
+Greetings if this is your first visit! The amount of content may overwhelm you and you don't know where to begin. The navigation tree on the left will provide links to all the articles you are interested in, so start reading the first one that grabs your attention.
+
+## Make your personal wiki
+
+My personal wiki is an essential tool for my personal development and self-improvement. It provides a central location for all of my information and knowledge, making it easy to access and organize. Additionally, my personal wiki allows for the creation of a digital garden, where information can grow and evolve over time. If you're looking for a way to better manage and utilise your own knowledge, a personal wiki may be the perfect solution for you. 
+
+## Improve this wiki
+
+Think of them like blog posts, but live. This is mainly for my own personal use; however, if an article isn't well written, isn't correct, needs to be redone, could use editing, or could be made better, please add, refer, remix, remake, destroy, or otherwise transmute it into something else. Preferably in the shape of a PR. Or, open an issue saying what you think is wrong, asking questions or making suggestions. Any feedback if it's constructive is welcome.
+
+## Thank you
+
+📫 Reach out to me:
 
 <p>
+
 <a href="https://www.linkedin.com/in/suryakantamangaraj/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+
 <a href="https://twitter.com/_suryaraj_" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a>
+
 <a href="https://www.instagram.com/suryaraj.me/"><img alt="Instagram" src="https://img.shields.io/badge/Instagram-%2312100E.svg?&style=for-the-badge&logo=Instagram&logoColor=white" /></a>
+
 <a href="https://suryaraj.me"><img alt="Website" src="https://img.shields.io/badge/Website-FF4500.svg?&style=for-the-badge&logo=Google%20Chrome&logoColor=white" /></a>
+
 </p>
 
-##
+## Disclaimer
+
+> :warning: Be aware, products can change over time. I do my best to keep up with the latest changes, but please understand that this won’t always be the case.
 
