@@ -65,7 +65,7 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
+/*           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
@@ -76,13 +76,13 @@ const config = {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
             position: 'right',
-          },
+          }, */
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          {
+/*           {
             title: 'Docs',
             items: [
               {
@@ -120,9 +120,9 @@ const config = {
                 href: 'https://github.com/facebook/docusaurus',
               },
             ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+          },*/
+         ],
+        copyright: `©2020 - ${new Date().getFullYear()} Surya Raj • Framed with 🤍 by Surya`,
       },
       prism: {
         theme: lightCodeTheme,
