@@ -38,7 +38,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/suryakantamangaraj/Wiki/blob/main/docs/intro.md',
+            'https://github.com/suryakantamangaraj/Wiki/blob/main',
         },
         blog: false,
 /*         blog: {
