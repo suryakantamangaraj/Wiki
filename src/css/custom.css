@@ -30,7 +30,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.docusaurus-highlight-code-line {
+/* .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
@@ -43,4 +43,4 @@
   padding: 10px;
   border-radius: 10px;
   border: 2px solid black;
-}
+} */
