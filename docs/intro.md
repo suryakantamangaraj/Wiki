@@ -57,6 +57,11 @@ Think of them like blog posts, but live. This is mainly for my own personal use;
 
 </p>
 
+## Support me
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M7I1G2H)
+
+
 ## Disclaimer
 
 > :warning: Be aware, products can change over time. I do my best to keep up with the latest changes, but please understand that this won’t always be the case.
