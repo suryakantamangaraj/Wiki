@@ -1,8 +1,9 @@
 ---
 title: How to Mac OS
+sidebar_position: 1
 ---
 
-# How to
+## How to
 This page is created to resolve day-to-day issues I used face while operating my Macbook.
 
 ## Q&A
