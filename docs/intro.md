@@ -59,6 +59,7 @@ Think of them like blog posts, but live. This is mainly for my own personal use;
 
 ## Support me
 
+If you 🤍 it, you can buy me a coffee☕
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/M4M7I1G2H)
 
 
