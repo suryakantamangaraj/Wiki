@@ -1,10 +1,10 @@
 ---
-title: How to Mac OS
+title: Wiki How for MacOS
 sidebar_position: 1
 ---
 
-## How to
-This page is created to resolve day-to-day issues I used face while operating my Macbook.
+## Wiki How
+This page is created to resolve day-to-day how-to for MacOS.
 
 ## Q&A
 
