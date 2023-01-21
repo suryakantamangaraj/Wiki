@@ -1,3 +1,7 @@
+---
+title: Operating System
+---
+
 # Introduction
 As a computer user, I constantly interact with my operating system (OS) without even realizing it. An operating system is software that acts as an intermediary between a user and a computer's hardware. It manages the computer's resources, such as memory and processing power, and provides a platform for other software to run on.
 

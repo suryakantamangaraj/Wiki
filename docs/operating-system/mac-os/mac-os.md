@@ -1,3 +1,7 @@
+---
+title: Mac OS
+---
+
 As a long-time Mac user, I can confidently say that macOS, the operating system that powers Apple's line of computers, is one of the most user-friendly and visually pleasing experiences in the world of personal computing.
 
 One of the key features that sets macOS apart from other operating systems is its intuitive design. The layout of the Dock and the use of Spotlight for search make it easy for users to quickly find and open the applications they need. The overall aesthetic of the OS is clean and modern, making it a pleasure to use for both work and play.
