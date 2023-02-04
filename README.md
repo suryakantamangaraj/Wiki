@@ -42,3 +42,4 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 
 ![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml/badge.svg)
+![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql/badge.svg)
