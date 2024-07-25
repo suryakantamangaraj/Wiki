@@ -65,7 +65,12 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-/*           {
+          {
+            href: 'https://suryaraj.me',
+            label: 'suryaraj.me',
+            position: 'right',
+          },
+/*        {
             type: 'doc',
             docId: 'intro',
             position: 'left',
