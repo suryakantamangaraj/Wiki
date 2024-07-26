@@ -35,9 +35,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4 # Upgrade to v4 of actions/checkout
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
-          node-version: 16.x
+          node-version: 20.x
           cache: yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
