@@ -127,7 +127,7 @@ const config = {
             ],
           },*/
          ],
-        copyright: `©2022 - ${new Date().getFullYear()} Surya Raj • Curated with 🤍 by Surya`,
+        copyright: `©2022 - ${new Date().getFullYear()} | Surya Sourcebook • Curated with ❤️ by Surya`,
       },
       prism: {
         theme: lightCodeTheme,
