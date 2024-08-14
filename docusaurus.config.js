@@ -51,15 +51,7 @@ const config = {
         }, */
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
-          //new lines added here for meramid
-          theme: ['@docusaurus/theme-mermaid'],
-          //ends here
         },
-        //new lines added here for meramid
-        markdown: {
-          mermaid: true,
-        },
-        //ends here
       }),
     ],
   ],
