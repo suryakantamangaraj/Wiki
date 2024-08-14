@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const mdxReact = require('@mdx-js/react'); //new line added
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -34,12 +33,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          include: ['**/*.md', '**/*.mdx'],
-          //remarkPlugins: [require('@mdx-js/react')],
-          remarkPlugins: [mdxReact], // Use the imported mdxReact
           //exclude: ['**/any/dir/**'], //To remove sub-directories
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -143,7 +138,7 @@ const config = {
       },
       mermaid: {
         theme: { // Ensure this is an object
-         // You can customize the Mermaid theme here
+          default: 'default',// You can customize the Mermaid theme here
         },
         },
     }),
