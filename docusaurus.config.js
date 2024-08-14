@@ -137,8 +137,10 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       mermaid: {
-        theme: 'default', // You can customize the Mermaid theme here
-      },
+        theme: { // Ensure this is an object
+          default: 'default',// You can customize the Mermaid theme here
+        },
+        },
     }),
 };
 
