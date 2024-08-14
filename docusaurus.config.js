@@ -50,19 +50,13 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         }, */
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-          //new lines added here for meramid
-          theme: ['@docusaurus/theme-mermaid'],
-          //ends here
+          customCss: require.resolve('./src/css/custom.css'),  
         },
-        //new lines added here for meramid
-        markdown: {
-          mermaid: true,
-        },
-        //ends here
       }),
     ],
   ],
+
+  themes: ['@docusaurus/theme-mermaid'], // Add this line to configure mermaid theme
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -141,6 +135,9 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      mermaid: {
+        theme: 'default', // You can customize the Mermaid theme here
       },
     }),
 };
