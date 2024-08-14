@@ -37,10 +37,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
+          # node-version: 16.x
           node-version: 18.x
           cache: yarn
-      - name: Clean Yarn Cache
-        run: yarn cache clean
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
       - name: Build
@@ -50,6 +49,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
+          # Upload entire repository
           path: build
       - name: Deploy to GitHub Pages
         id: deployment
