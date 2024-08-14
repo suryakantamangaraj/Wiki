@@ -1,4 +1,7 @@
 name: Generate Mind Map
+permissions:
+  contents: write
+
 
 on:
   push:
@@ -22,6 +25,8 @@ jobs:
       run: python generate_mindmap.py
 
     - name: Commit and push changes to mindmap branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
