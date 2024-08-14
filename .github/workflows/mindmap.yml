@@ -1,7 +1,4 @@
 name: Generate Mind Map
-permissions:
-  contents: write
-
 
 on:
   push:
