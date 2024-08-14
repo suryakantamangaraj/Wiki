@@ -2,7 +2,6 @@ name: Generate Mind Map
 permissions:
   contents: write
 
-
 on:
   push:
     branches:
@@ -24,13 +23,12 @@ jobs:
     - name: Generate mind map
       run: python generate_mindmap.py
 
-    - name: Commit and push changes to mindmap branch
+    - name: Commit and push changes to main branch
       env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git checkout -b mindmap-branch
         git add mindmap.mmd
         git commit -m 'Generate mind map'
-        git push --force --set-upstream origin mindmap-branch
+        git push origin main
