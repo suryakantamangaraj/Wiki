@@ -1,5 +1,4 @@
-export const mindmapContent = ```mermaid
-
+export const mindmapContent = `
 mindmap
   root
     Intro
@@ -14,5 +13,4 @@ mindmap
     misc
     tools
     technology
-
-```;
+`;

@@ -16,9 +16,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     return;
   }
 
-  const content = `export const mindmapContent = \`\`\`mermaid
-${data}
-\`\`\`;`;
+  const content = `export const mindmapContent = \`${data}\`;`;
 
   fs.writeFile(outputFilePath, content, (err) => {
     if (err) {
