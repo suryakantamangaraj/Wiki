@@ -56,9 +56,6 @@ const config = {
           alt: 'Surya Sourcebook Logo',
           src: 'img/logo.svg',
         },
-        /* liveCodeBlock: {
-          playgroundPosition: 'bottom',
-        }, */
         items: [
           {
             href: 'https://suryaraj.me',
