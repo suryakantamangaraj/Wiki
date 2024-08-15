@@ -40,6 +40,24 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
+### Running the Mind Map Generator
+
+To generate the mind map, follow these steps:
+
+1. **Ensure you have Python installed** on your system. You can check this by running:
+    ```sh
+    python --version
+    ```
+
+2. **Navigate to the directory** containing the `generate_mindmap.py` script.
+
+3. **Run the script** using the following command:
+    ```sh
+    python generate_mindmap.py
+    ```
+
+This will create a `mindmap.mmd` file in the same directory, containing the structure of your `docs` folder.
+
 
 ![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml/badge.svg)
 ![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql/badge.svg)
