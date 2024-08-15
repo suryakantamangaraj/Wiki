@@ -56,13 +56,9 @@ const config = {
           alt: 'Surya Sourcebook Logo',
           src: 'img/logo.svg',
         },
-        liveCodeBlock: {
-          /**
-           * The position of the live playground, above or under the editor
-           * Possible values: "top" | "bottom"
-           */
+        /* liveCodeBlock: {
           playgroundPosition: 'bottom',
-        },
+        }, */
         items: [
           {
             href: 'https://suryaraj.me',
@@ -87,7 +83,7 @@ const config = {
 
 export default {
   themes: ['@docusaurus/theme-mermaid'],
-  plugins: ['@docusaurus/theme-live-codeblock'],
+  //plugins: ['@docusaurus/theme-live-codeblock'],
   // In order for Mermaid code blocks in Markdown to work,
   // you also need to enable the Remark plugin with this option
   markdown: {
