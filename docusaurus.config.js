@@ -36,20 +36,10 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          //exclude: ['**/any/dir/**'], //To remove sub-directories
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/suryakantamangaraj/Wiki/blob/main',
         },
         blog: false,
-/*         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        }, */
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -66,68 +56,24 @@ const config = {
           alt: 'Surya Sourcebook Logo',
           src: 'img/logo.svg',
         },
+        liveCodeBlock: {
+          /**
+           * The position of the live playground, above or under the editor
+           * Possible values: "top" | "bottom"
+           */
+          playgroundPosition: 'bottom',
+        },
         items: [
           {
             href: 'https://suryaraj.me',
             label: 'suryaraj.me',
             position: 'right',
           },
-/*        {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          }, */
         ],
       },
       footer: {
         style: 'dark',
         links: [
-/*           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },*/
          ],
         copyright: `©2020 - ${new Date().getFullYear()} Surya Raj | Surya Sourcebook • Curated with ❤️ by Surya`,
       },
@@ -141,6 +87,7 @@ const config = {
 
 export default {
   themes: ['@docusaurus/theme-mermaid'],
+  plugins: ['@docusaurus/theme-live-codeblock'],
   // In order for Mermaid code blocks in Markdown to work,
   // you also need to enable the Remark plugin with this option
   markdown: {
