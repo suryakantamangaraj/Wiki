@@ -36,7 +36,7 @@ def generate_mindmap():
 mindmap
     Intro
 """
-    mindmap_content = add_directory_content(mindmap_content, "docs", 1)
+    mindmap_content = add_directory_content(mindmap_content, "docs", 2)  # Start with indent level 2
 
     with open("mindmap.mmd", "w", encoding='utf-8') as file:
         file.write(mindmap_content)
