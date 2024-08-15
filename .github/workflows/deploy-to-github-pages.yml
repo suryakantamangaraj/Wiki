@@ -43,6 +43,8 @@ jobs:
         run: yarn install --frozen-lockfile --non-interactive
       - name: Build
         run: yarn build
+      - name: List build directory contents
+        run: ls -la build
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
@@ -50,6 +52,8 @@ jobs:
         with:
           # Upload entire repository
           path: build
+      - name: List uploaded artifacts
+        run: ls -la ${{ github.workspace }}
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
