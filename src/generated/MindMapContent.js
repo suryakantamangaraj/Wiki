@@ -1,4 +1,5 @@
-export const mindmapContent = `
+export const mindmapContent = `graph TD;
+
 mindmap
   root
     Intro

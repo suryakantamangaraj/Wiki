@@ -16,7 +16,8 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     return;
   }
 
-  const content = `export const mindmapContent = \`${data}\`;`;
+  // Add the required Mermaid formatting
+  const content = `export const mindmapContent = \`graph TD;\n${data}\`;`;
 
   fs.writeFile(outputFilePath, content, (err) => {
     if (err) {

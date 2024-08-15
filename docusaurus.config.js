@@ -89,6 +89,12 @@ export default {
        */
       playgroundPosition: 'bottom',
     },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'forest'},
+      options: {
+        maxTextSize: 50,
+      },
+    },
   },
   // In order for Mermaid code blocks in Markdown to work,
   // you also need to enable the Remark plugin with this option
