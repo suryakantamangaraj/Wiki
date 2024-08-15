@@ -40,6 +40,11 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
 
+---
+
+***
+
+___
 
 ### Running the Mind Map Generator
 
@@ -57,25 +62,26 @@ Generates a `mindmap.mmd` file with the structure of your `docs` folder.
     python generate_mindmap.py
     ```
 
-#### JavaScript Script: `generateMindMapContent.js`
+#### Converting `.mmd` to Image
 
-Formats `mindmap.mmd` for Mermaid and writes to `MindMapContent.js`.
+Converts the generated `mindmap.mmd` file to a PNG image using Mermaid CLI.
 
 **Usage:**
-1. Ensure Node.js is installed:
+1. Ensure Node.js and Mermaid CLI are installed:
     ```sh
     node --version
+    npm install -g @mermaid-js/mermaid-cli
     ```
 2. Navigate to the script's directory and run:
     ```sh
-    node generateMindMapContent.js
+    mmdc -i mindmap.mmd -o src/generated/mindmap.png
     ```
 
-### Running Both Scripts Sequentially
+### Running Both Steps Sequentially
 
 #### Combined Script: `runScripts.js`
 
-Runs both scripts in sequence.
+Runs the Python script to generate the mind map and then converts it to an image.
 
 **Usage:**
 1. Navigate to the script's directory and run:
@@ -90,8 +96,11 @@ Run the combined script for the entire process:
 node runScripts.js
 ```
 
-This ensures both scripts are executed in the correct order, generating and formatting the mind map content for your Docusaurus project.
+---
 
+***
+
+___
 
 ![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml/badge.svg)
 ![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql/badge.svg)
