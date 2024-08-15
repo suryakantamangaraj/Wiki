@@ -53,3 +53,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+       # New step to set the output using Environment Files
+      - name: Set deployment URL
+        run: echo "page_url=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV
