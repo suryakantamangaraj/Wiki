@@ -26,15 +26,18 @@ jobs:
       - name: Generate mind map
         run: python generate_mindmap.py
 
-      - name: Configure GPG
+      - name: Import GPG key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         run: |
-          echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
-          echo "${{ secrets.GPG_PASSPHRASE }}" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --edit-key <your-email@example.com> trust quit
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          echo "$GPG_PASSPHRASE" | gpg --batch --yes --passphrase-fd 0 --pinentry-mode loopback --edit-key <your-email@example.com> trust quit
 
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GPG_KEY_ID: <your-key-id>
+          GPG_KEY_ID: $(gpg --list-keys --with-colons | grep pub | cut -d: -f5)
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
