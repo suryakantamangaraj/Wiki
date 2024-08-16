@@ -1,7 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const {themes} = require('prism-react-renderer');
+const { themes } = require('prism-react-renderer');
 const lightTheme = themes.github;
 const darkTheme = themes.dracula;
 
@@ -14,20 +14,12 @@ const config = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Surya Raj', // Usually your GitHub org/user name.
   projectName: 'Personal Wiki', // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
   presets: [
     [
       'classic',
@@ -36,8 +28,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/suryakantamangaraj/Wiki/blob/main',
+          editUrl: 'https://github.com/suryakantamangaraj/Wiki/blob/main',
         },
         blog: false,
         theme: {
@@ -46,58 +37,43 @@ const config = {
       }),
     ],
   ],
-
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      navbar: {
-        title: 'Surya Sourcebook',
-        logo: {
-          alt: 'Surya Sourcebook Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            href: 'https://suryaraj.me',
-            label: 'suryaraj.me',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-         ],
-        copyright: `©2020 - ${new Date().getFullYear()} Surya Raj | Surya Sourcebook • Curated with ❤️ by Surya`,
-      },
-      prism: {
-        additionalLanguages: ['bash', 'diff', 'json'],
-        theme: lightTheme,
-        darkTheme: darkTheme,
-      },
-    }),
-};
-
-export default {
-  themes: ['@docusaurus/theme-mermaid'],
-  plugins: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
+    navbar: {
+      title: 'Surya Sourcebook',
+      logo: {
+        alt: 'Surya Sourcebook Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          href: 'https://suryaraj.me',
+          label: 'suryaraj.me',
+          position: 'right',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [],
+      copyright: `©2020 - ${new Date().getFullYear()} Surya Raj | Surya Sourcebook • Curated with ❤️ by Surya`,
+    },
+    prism: {
+      additionalLanguages: ['bash', 'diff', 'json'],
+      theme: lightTheme,
+      darkTheme: darkTheme,
+    },
     liveCodeBlock: {
-      /**
-       * The position of the live playground, above or under the editor
-       * Possible values: "top" | "bottom"
-       */
       playgroundPosition: 'bottom',
     },
     mermaid: {
-      theme: {light: 'neutral', dark: 'forest'},
+      theme: { light: 'neutral', dark: 'forest' },
       options: {
         maxTextSize: 50,
       },
     },
   },
-  // In order for Mermaid code blocks in Markdown to work,
-  // you also need to enable the Remark plugin with this option
+  themes: ['@docusaurus/theme-mermaid'],
+  plugins: ['@docusaurus/theme-live-codeblock'],
   markdown: {
     mermaid: true,
   },
