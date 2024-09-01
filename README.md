@@ -1,10 +1,16 @@
 # Wiki
 
-## How to Build and Manage Your Website Locally
+### How to Build and Manage Your Website Locally
 
-### Recommended Usage
+#### Recommended Usage
 
-Run the combined script for the entire process:
+For the first-time setup, run:
+```sh
+yarn
+node runScripts.js
+```
+
+For subsequent uses, simply run:
 ```sh
 node runScripts.js
 ```
