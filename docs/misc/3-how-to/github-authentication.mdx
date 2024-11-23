@@ -1,0 +1,179 @@
+---
+title: Managing GitHub Authentication Across Operating Systems
+sidebar_position: 2
+---
+:::note
+
+Last Update: 23 Nov 2024
+
+:::
+
+
+Setting up GitHub authentication has evolved. GitHub no longer supports password authentication for HTTPS URLs. Instead, it requires **Personal Access Tokens (PATs)** or **SSH keys**. Here's a detailed guide to help you manage GitHub authentication on **macOS**, **Windows**, and **Linux/Unix**.
+
+---
+
+## Why This Matters
+
+If you're encountering errors like:
+```plaintext
+remote: Support for password authentication was removed on August 13, 2021.
+fatal: Authentication failed
+```
+It means GitHub is enforcing modern authentication methods for security. This guide will show you how to configure Git correctly and avoid these issues.
+
+---
+
+## Table of Contents
+1. [Understanding the Changes](#understanding-the-changes)
+2. [Using a Personal Access Token (PAT)](#using-a-personal-access-token-pat)
+   - [Step 1: Generate a PAT](#step-1-generate-a-pat)
+   - [Step 2: Update Git Configuration](#step-2-update-git-configuration)
+   - [Step 3: Caching Credentials](#step-3-caching-credentials)
+3. [Using SSH Keys](#using-ssh-keys)
+   - [Step 1: Generate an SSH Key](#step-1-generate-an-ssh-key)
+   - [Step 2: Add the SSH Key to GitHub](#step-2-add-the-ssh-key-to-github)
+   - [Step 3: Configure Git](#step-3-configure-git)
+4. [OS-Specific Instructions](#os-specific-instructions)
+   - [macOS](#macos)
+   - [Windows](#windows)
+   - [Linux/Unix](#linuxunix)
+5. [Troubleshooting Common Errors](#troubleshooting-common-errors)
+6. [Conclusion](#conclusion)
+
+---
+
+## Understanding the Changes
+
+GitHub now requires:
+- **Personal Access Tokens (PATs):** Used as replacements for passwords in HTTPS URLs.
+- **SSH Keys:** Used for secure communication between your system and GitHub repositories.
+
+Modern authentication methods improve security and eliminate risks associated with plain-text passwords.
+
+---
+
+## Using a Personal Access Token (PAT)
+
+### Step 1: Generate a PAT
+1. Log in to GitHub.
+2. Go to [Personal Access Tokens Settings](https://github.com/settings/tokens).
+3. Click **Generate new token (classic)**.
+4. Set an expiration (e.g., `30 days`) and note its purpose (e.g., `Git Operations`).
+5. Under **Scopes**, check:
+   - `repo` (for private and public repositories).
+6. Click **Generate Token** and copy it immediately.
+
+### Step 2: Update Git Configuration
+1. Open your terminal and configure Git to use the token:
+   ```bash
+   git remote set-url origin https://<username>:<your-token>@github.com/<username>/<repo>.git
+   ```
+   Replace `<username>`, `<your-token>`, and `<repo>` with your details.
+
+2. Push your changes:
+   ```bash
+   git push -u origin <branch-name>
+   ```
+3. Enter the token when prompted for a password.
+
+### Step 3: Caching Credentials
+- Use Git’s credential manager to avoid repeated prompts:
+  ```bash
+  git config --global credential.helper store
+  ```
+
+---
+
+## Using SSH Keys
+
+### Step 1: Generate an SSH Key
+1. Open your terminal and type:
+   ```bash
+   ssh-keygen -t ed25519 -C "your-email@example.com"
+   ```
+   Press Enter to save the key in the default location.
+
+2. Start the SSH agent:
+   ```bash
+   eval "$(ssh-agent -s)"
+   ssh-add ~/.ssh/id_ed25519
+   ```
+
+### Step 2: Add the SSH Key to GitHub
+1. Copy the SSH key:
+   ```bash
+   pbcopy < ~/.ssh/id_ed25519.pub
+   ```
+2. Log in to GitHub and go to [SSH Keys Settings](https://github.com/settings/keys).
+3. Click **New SSH Key**, paste the key, and save it.
+
+### Step 3: Configure Git
+1. Update the remote URL:
+   ```bash
+   git remote set-url origin git@github.com:<username>/<repo>.git
+   ```
+2. Test the connection:
+   ```bash
+   ssh -T git@github.com
+   ```
+
+---
+
+## OS-Specific Instructions
+
+### macOS
+- Use the **Keychain Access** app to manage credentials.
+- If GitHub credentials are saved in iCloud, disable **iCloud Keychain** temporarily to edit or delete entries.
+- Set up the Git credential helper:
+  ```bash
+  git config --global credential.helper osxkeychain
+  ```
+
+### Windows
+- Use the **Windows Credential Manager** to manage GitHub credentials.
+- Configure the Git credential helper:
+  ```bash
+  git config --global credential.helper manager
+  ```
+
+### Linux/Unix
+- Use the **Git Credential Cache** for temporary storage:
+  ```bash
+  git config --global credential.helper cache
+  ```
+- Or, use the **libsecret** package for secure storage:
+  ```bash
+  git config --global credential.helper libsecret
+  ```
+
+---
+
+## Troubleshooting Common Errors
+
+### 1. Git Doesn’t Prompt for Credentials
+- Clear cached credentials:
+  ```bash
+  git credential-cache exit
+  ```
+- Delete stored credentials (macOS example):
+  ```bash
+  security delete-generic-password -a "<username>" -s "github.com"
+  ```
+
+### 2. Authentication Fails Repeatedly
+- Verify the remote URL:
+  ```bash
+  git remote -v
+  ```
+- Test GitHub connectivity:
+  ```bash
+  ssh -T git@github.com
+  ```
+
+---
+
+## Conclusion
+
+Switching to **Personal Access Tokens** or **SSH keys** ensures secure authentication with GitHub. By following this guide, I’ve learned how to navigate these changes and configure Git across platforms. Whether you’re a newbie or seasoned user, these steps will keep your workflow smooth and secure!
+
