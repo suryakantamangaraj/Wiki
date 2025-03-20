@@ -75,6 +75,12 @@ jobs:
       - name: Debug - Check build directory permissions
         run: stat build
 
+      # Add this before the upload step
+      - name: Check for symlinks and hard links
+        run: |
+          echo "Checking for symlinks and hard links in build directory..."
+          find build -type l -o -type h
+
       # Step 8: Upload the generated static content as an artifact
       # Make the "build" directory available for deployment
       - name: Upload build artifacts
@@ -82,6 +88,8 @@ jobs:
         with:
           name: github-pages   # Name of the uploaded artifact
           path: build          # Path to the static website files
+          if-no-files-found: error  # Fail if build directory is empty
+          retention-days: 1         # Minimize storage usage
 
       # Step 9: Configure GitHub Pages for deployment
       # Enable GitHub Pages settings for the repository
@@ -94,7 +102,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact-name: github-pages   # Match the artifact name with the upload step
+          artifact_name: github-pages   # Match the artifact name with the upload step
 
       # Step 11: Debug - Output the deployment URL
       # Print the deployment URL for verification
