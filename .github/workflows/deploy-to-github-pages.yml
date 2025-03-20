@@ -76,7 +76,7 @@ jobs:
       # Step 9: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
 
       # Step 10: Debug step to print the deployment URL
       # Ensures the deployment step correctly sets the output variable
