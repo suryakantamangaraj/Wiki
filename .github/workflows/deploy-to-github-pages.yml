@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # Hosted GitHub runners have 7 GB of memory available, let's use 6 GB
+  # Hosted GitHub runners have 7 GB of memory available; let's use 6 GB
   NODE_OPTIONS: --max-old-space-size=6144
 
 jobs:
@@ -32,36 +32,53 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Check out the repository
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js for the workflow
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
           cache: yarn
+
+      # Step 3: Install dependencies using Yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
+
+      # Step 4: Build the static content
       - name: Build
         run: yarn build
-      - name: List build directory contents
+
+      # Step 5: Debug step to list contents of the build directory
+      # This ensures the build step worked correctly and shows if the directory exists
+      - name: Debug - List build directory contents
         run: ls -la build
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
-      #- name: Upload artifact
-      #  uses: actions/upload-pages-artifact@v1
-      #  with:
-          # Upload entire repository
-      #    path: build
-      - name: Upload artifact
+
+      # Step 6: Debug step to check permissions of the build directory
+      # Helps identify issues related to file permissions
+      - name: Debug - Check build directory permissions
+        run: stat build
+
+      # Step 7: Upload build artifacts using actions/upload-artifact@v3
+      # These can be used in subsequent workflows
+      - name: Upload build artifacts
         uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: build
 
+      # Step 8: Setup GitHub Pages for deployment
+      - name: Setup Pages
+        uses: actions/configure-pages@v1
+
+      # Step 9: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
 
-       # New step to set the output using Environment Files
-      - name: Set deployment URL
+      # Step 10: Debug step to print the deployment URL
+      # Ensures the deployment step correctly sets the output variable
+      - name: Debug - Set deployment URL
         run: echo "page_url=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV
