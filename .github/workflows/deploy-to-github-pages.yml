@@ -79,7 +79,12 @@ jobs:
       - name: Check for symlinks and hard links
         run: |
           echo "Checking for symlinks and hard links in build directory..."
-          find build -type l -o -type h
+          # Check for symlinks
+          echo "Checking symlinks:"
+          find build -type l
+          # Check for hard links (files with link count > 1)
+          echo "Checking hard links:"
+          find build -type f -links +1
 
       # Step 8: Upload the generated static content as an artifact
       # Make the "build" directory available for deployment
