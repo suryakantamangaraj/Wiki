@@ -47,11 +47,17 @@ jobs:
         run: ls -la build
       - name: Setup Pages
         uses: actions/configure-pages@v1
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v1
+      #  with:
           # Upload entire repository
+      #    path: build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
           path: build
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
