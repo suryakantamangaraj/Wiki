@@ -64,7 +64,7 @@ jobs:
       # Step 7: Upload build artifacts using actions/upload-artifact@v3
       # These can be used in subsequent workflows
       - name: Upload build artifacts
-        uses: actions/upload-artifact@d1d3d558971d8b2d12ee7b5e731db22fbd6c24ec
+        uses: actions/upload-artifact@v3
         with:
           name: build-artifacts
           path: build
