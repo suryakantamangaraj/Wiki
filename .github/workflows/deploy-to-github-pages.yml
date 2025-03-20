@@ -1,87 +1,102 @@
-# Simple workflow for deploying static content to GitHub Pages
+# GitHub Actions workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
+# Define the triggers for this workflow
 on:
-  # Runs on pushes targeting the default branch
+  # Trigger workflow on pushes to the main branch
   push:
     branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # Allow manual triggering of the workflow from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Set permissions for the GITHUB_TOKEN to allow access for deployment
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read    # Read access to repository content
+  pages: write      # Write access to GitHub Pages
+  id-token: write   # Access for authentication with OIDC
 
-# Allow one concurrent deployment
+# Allow only one deployment at a time by grouping jobs under "pages"
 concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  group: "pages"               # Ensure deployments do not overlap
+  cancel-in-progress: true     # Cancel ongoing jobs if a new job starts
 
+# Set environment variables (optimize memory usage for Node.js)
 env:
-  # Hosted GitHub runners have 7 GB of memory available; let's use 6 GB
   NODE_OPTIONS: --max-old-space-size=6144
 
+# Define the deployment job
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
+    # Specify the environment and deployment output
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      name: github-pages       # Name of the deployment environment
+      url: ${{ steps.deployment.outputs.page_url }} # Deployment URL output
+
+    # Use the latest Ubuntu runner for the workflow
     runs-on: ubuntu-latest
+
+    # Define the steps in the deployment process
     steps:
       # Step 1: Check out the repository
-      - name: Checkout
+      # This fetches the latest code from the repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up Node.js for the workflow
+      # Step 2: Set up the Node.js environment
+      # Use Node.js version 20.x and enable dependency caching for Yarn
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
-          cache: yarn
+          node-version: 20.x   # Use Node.js 20
+          cache: yarn          # Cache dependencies for faster builds
 
-      # Step 3: Install dependencies using Yarn
+      # Step 3: Install project dependencies using Yarn
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
 
+      # Step 4: Clean the build directory
+      # Ensure there are no leftover files from previous builds
       - name: Clean build directory
         run: rm -rf build
-        
-      # Step 4: Build the static content
-      - name: Build
+
+      # Step 5: Build the static content
+      # Generate the static website in the "build" directory
+      - name: Build static content
         run: yarn build
 
-      # Step 5: Debug step to list contents of the build directory
-      # This ensures the build step worked correctly and shows if the directory exists
+      # Step 6: Debug - List the contents of the build directory
+      # Verify the "build" directory was successfully created
       - name: Debug - List build directory contents
         run: ls -la build
 
-      # Step 6: Debug step to check permissions of the build directory
-      # Helps identify issues related to file permissions
+      # Step 7: Debug - Check permissions of the build directory
+      # Ensure the directory has proper read/write permissions
       - name: Debug - Check build directory permissions
         run: stat build
 
-      # Step 7: Upload build artifacts using actions/upload-artifact@v3
-      # These can be used in subsequent workflows
+      # Step 8: Upload the generated static content as an artifact
+      # Make the "build" directory available for deployment
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
-          path: build
+          name: github-pages   # Name of the uploaded artifact
+          path: build          # Path to the static website files
 
-      # Step 8: Setup GitHub Pages for deployment
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
+      # Step 9: Configure GitHub Pages for deployment
+      # Enable GitHub Pages settings for the repository
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v2
 
-      # Step 9: Deploy to GitHub Pages
+      # Step 10: Deploy the static content to GitHub Pages
+      # Use the uploaded artifact to deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact-name: github-pages   # Match the artifact name with the upload step
 
-      # Step 10: Debug step to print the deployment URL
-      # Ensures the deployment step correctly sets the output variable
+      # Step 11: Debug - Output the deployment URL
+      # Print the deployment URL for verification
       - name: Debug - Set deployment URL
         run: echo "page_url=${{ steps.deployment.outputs.page_url }}" >> $GITHUB_ENV
