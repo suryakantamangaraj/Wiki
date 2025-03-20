@@ -47,6 +47,9 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
 
+      - name: Clean build directory
+        run: rm -rf build
+        
       # Step 4: Build the static content
       - name: Build
         run: yarn build
