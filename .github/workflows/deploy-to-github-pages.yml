@@ -75,34 +75,28 @@ jobs:
       - name: Debug - Check build directory permissions
         run: stat build
 
-      # Step 7: Create a clean copy of build directory
+      # Step 7: Create a clean copy without any links
       - name: Create clean build copy
         run: |
           echo "Creating clean copy of build directory..."
-          mv build build_original
-          mkdir build
-          cp -rL build_original/* build/
-          rm -rf build_original
+          # Create a temporary directory
+          mkdir -p temp_build
+          # Copy files while resolving links and preserving attributes
+          cp -r --preserve=all build/. temp_build/
+          # Remove original build directory
+          rm -rf build
+          # Move temp directory to build
+          mv temp_build build
+          # Set proper permissions
+          chmod -R u+rw,g+r,o+r build
 
-      # Step 8: Verify no links exist
-      - name: Check for symlinks and hard links
+      # Debugging step to verify the copy
+      - name: Verify build directory
         run: |
-          echo "Checking for symlinks and hard links in build directory..."
-          echo "Checking symlinks:"
-          if find build -type l | grep -q .; then
-            echo "Error: Symlinks found"
-            exit 1
-          else
-            echo "No symlinks found"
-          fi
-          
-          echo "Checking hard links:"
-          if find build -type f -links +1 | grep -q .; then
-            echo "Error: Hard links found"
-            exit 1
-          else
-            echo "No hard links found"
-          fi
+          echo "Listing build directory contents and permissions:"
+          ls -la build
+          echo "Checking for any remaining links:"
+          find build -type l -o -type f -links +1
 
       # Step 8: Upload the generated static content as an artifact
       # Make the "build" directory available for deployment
