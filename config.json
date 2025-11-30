@@ -1,10 +1,10 @@
 {
     "index_name": "Wiki_Index",
     "start_urls": [
-      "https://wiki.suryaraj.me/"
+      "https://wiki.suryaraj.com/"
     ],
     "sitemap_urls": [
-      "https://wiki.suryaraj.me/sitemap.xml"
+      "https://wiki.suryaraj.com/sitemap.xml"
     ],
     "sitemap_alternate_links": true,
     "stop_urls": [
