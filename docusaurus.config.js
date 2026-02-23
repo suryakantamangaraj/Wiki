@@ -114,7 +114,10 @@ const config = {
       },
     ],
   ],
-  plugins: ['@docusaurus/theme-live-codeblock'],
+  plugins: [
+    '@docusaurus/theme-live-codeblock',
+    require.resolve('./indexnow-plugin.js')
+  ],
   markdown: {
     mermaid: true,
     hooks: {
