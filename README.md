@@ -46,21 +46,7 @@ Converts the generated `mindmap.mmd` file to a PNG image using Mermaid CLI.
     mmdc -i mindmap.mmd -o src/generated/mindmap.png
     ```
 
-### Running the Docker Command
 
-#### Docker Command for Algolia Search
-
-Runs the Docker command to execute the Algolia DocSearch scraper.
-
-**Usage:**
-1. Ensure Docker is installed:
-    ```sh
-    docker --version
-    ```
-2. Run the Docker command:
-    ```sh
-    docker run -it --env-file=.env -e "CONFIG=$(cat ./config.json | jq -r tostring)" algolia/docsearch-scraper
-    ```
     
 ---
 ***

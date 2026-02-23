@@ -51,28 +51,10 @@ function generateMindMap(callback) {
   });
 }
 
-// Function to run the Docker command
-function runDockerCommand() {
-  // Read the config.json file
-  const configPath = path.join(__dirname, 'config.json');
-  const configContent = fs.readFileSync(configPath, 'utf8');
-
-  execFile('docker', ['run', '--env-file=.env', '-e', `CONFIG=${configContent}`, 'algolia/docsearch-scraper'], (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error running Docker command: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.error(`Docker command stderr: ${stderr}`);
-      return;
-    }
-    console.log(`Docker command stdout: ${stdout}`);
-  });
-}
 
 // Execute the functions in sequence
 runYarnBuild(() => {
   generateMindMap(() => {
-    runDockerCommand();
+    console.log('Build and mindmap generation complete.');
   });
 });

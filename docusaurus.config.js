@@ -38,14 +38,7 @@ const config = {
     ],
   ],
   themeConfig: {
-    algolia: {
-      apiKey: '8b8d34b0ceaeacfb1dda9832adab6784',
-      indexName: 'Wiki_Index',
-      contextualSearch: true,
-      placeholder: 'Search WIKI',
-      appId: '9Z9N2EVSEC',
-      //Add any other parameters to customize
-    },
+
     navbar: {
       title: 'Surya Sourcebook',
       logo: {
@@ -80,7 +73,19 @@ const config = {
       },
     },
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        language: ['en'],
+      },
+    ],
+  ],
   plugins: ['@docusaurus/theme-live-codeblock'],
   markdown: {
     mermaid: true,
