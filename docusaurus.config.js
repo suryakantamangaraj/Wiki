@@ -7,7 +7,7 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Surya Raj | Digital Garden',
+  title: 'Surya Sourcebook',
   tagline: 'Unlocking the power of self-discovery',
   url: 'https://wiki.suryraj.com',
   baseUrl: '/',
@@ -43,8 +43,8 @@ const config = {
   ],
   themeConfig: {
     metadata: [
-      { name: 'keywords', content: 'personal wiki, digital garden, Surya Raj, Suryakanta Mangaraj, RF Engineering, electronics, AI, ML, software development' },
-      { name: 'description', content: 'This is the personal knowledge base of Surya Raj, also known as Suryakanta Mangaraj, featuring notes on RF Engineering, coding, and electronics.' }
+      { name: 'keywords', content: 'Surya Sourcebook, personal wiki, digital garden, Surya Raj, Suryakanta Mangaraj, RF Engineering, electronics, AI, ML, software development' },
+      { name: 'description', content: 'Surya Sourcebook is the personal knowledge base of Surya Raj, also known as Suryakanta Mangaraj, featuring notes on RF Engineering, coding, and electronics.' }
     ],
 
     navbar: {
