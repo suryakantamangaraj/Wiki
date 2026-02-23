@@ -7,9 +7,9 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Surya Sourcebook',
+  title: 'Surya Raj | Digital Garden',
   tagline: 'Unlocking the power of self-discovery',
-  url: 'https://suryakantamangaraj.github.io',
+  url: 'https://wiki.suryraj.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -32,6 +32,11 @@ const config = {
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          filename: 'sitemap.xml',
         },
       }),
     ],
