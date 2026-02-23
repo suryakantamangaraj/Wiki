@@ -7,10 +7,30 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Surya Sourcebook',
-  tagline: 'Unlocking the power of self-discovery',
+  title: 'Surya Raj | Digital Garden',
+  tagline: 'Surya Sourcebook: Unlocking the power of self-discovery through a digital garden.',
   url: 'https://wiki.suryraj.com',
   baseUrl: '/',
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Person',
+        name: 'Suryakanta Mangaraj',
+        alternateName: 'Surya Raj',
+        jobTitle: 'RF Engineer',
+        url: 'https://wiki.suryraj.com',
+        sameAs: [
+          'https://www.linkedin.com/in/suryakantamangaraj/',
+          'https://x.com/_suryaraj_'
+        ],
+      }),
+    },
+  ],
   onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Surya Raj', // Usually your GitHub org/user name.
