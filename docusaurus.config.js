@@ -12,7 +12,6 @@ const config = {
   url: 'https://suryakantamangaraj.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'Surya Raj', // Usually your GitHub org/user name.
   projectName: 'Personal Wiki', // Usually your repo name.
@@ -89,6 +88,9 @@ const config = {
   plugins: ['@docusaurus/theme-live-codeblock'],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
 };
 
