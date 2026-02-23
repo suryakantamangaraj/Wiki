@@ -7,9 +7,9 @@ const darkTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Surya Sourcebook',
-  tagline: 'Unlocking the power of self-discovery',
-  url: 'https://suryakantamangaraj.github.io',
+  title: 'Surya Raj | Digital Garden',
+  tagline: 'The personal wiki and digital garden of Suryakanta Mangaraj (Surya Raj), a collection of notes, learnings, and technical insights.',
+  url: 'https://wiki.suryraj.com',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -37,6 +37,10 @@ const config = {
     ],
   ],
   themeConfig: {
+    metadata: [
+      { name: 'keywords', content: 'Surya Raj, Suryakanta Mangaraj, Digital Garden' },
+      { name: 'description', content: 'The personal wiki and digital garden of Suryakanta Mangaraj (Surya Raj), a collection of notes, learnings, and technical insights.' }
+    ],
 
     navbar: {
       title: 'Surya Sourcebook',
