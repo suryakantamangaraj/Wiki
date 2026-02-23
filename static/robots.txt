@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wiki.suryraj.com/sitemap.xml
+Sitemap: https://wiki.suryaraj.com/sitemap.xml

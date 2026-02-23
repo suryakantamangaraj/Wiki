@@ -9,7 +9,7 @@ const darkTheme = themes.dracula;
 const config = {
   title: 'Surya Raj | Digital Garden',
   tagline: 'Surya Sourcebook: Unlocking the power of self-discovery through a digital garden.',
-  url: 'https://wiki.suryraj.com',
+  url: 'https://wiki.suryaraj.com',
   baseUrl: '/',
   headTags: [
     {
@@ -23,7 +23,7 @@ const config = {
         name: 'Suryakanta Mangaraj',
         alternateName: 'Surya Raj',
         jobTitle: 'RF Engineer',
-        url: 'https://wiki.suryraj.com',
+        url: 'https://wiki.suryaraj.com',
         sameAs: [
           'https://www.linkedin.com/in/suryakantamangaraj/',
           'https://x.com/_suryaraj_'

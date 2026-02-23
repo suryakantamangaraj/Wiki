@@ -7,7 +7,7 @@ module.exports = function (context, options) {
         async postBuild({ siteConfig, routesPaths, outDir }) {
             // 1. Hardcoded 32-character secure key for IndexNow API authorization
             const keyStr = 'c28a559ed5034f3189cd11dbb9bd6160';
-            const host = 'wiki.suryraj.com';
+            const host = 'wiki.suryaraj.com';
 
             // 2. Write the verification key file directly into the build output
             fs.writeFileSync(path.join(outDir, `${keyStr}.txt`), keyStr);
