@@ -53,7 +53,7 @@ Converts the generated `mindmap.mmd` file to a PNG image using Mermaid CLI.
 ___
 
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
