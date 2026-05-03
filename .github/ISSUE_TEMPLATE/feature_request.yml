@@ -1,0 +1,21 @@
+name: Feature Request
+description: Suggest a new domain, content section, or platform improvement.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: feature
+    attributes:
+      label: Vision
+      description: What is your suggestion?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is this needed?
+      description: How does this improve the personal knowledge base?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any other ways to solve this?

@@ -1,102 +1,55 @@
-# Wiki
+# Wiki | Personal Knowledge Base & Digital Garden
 
-### How to Build and Manage Your Website Locally
+[![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml/badge.svg)](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml)
+[![Security Scan](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-#### Recommended Usage
+Welcome to my **Digital Garden**—a curated personal knowledge base documenting my journey through technology, finance, philosophy, and lifestyle. This repository serves as my "Second Brain," built with [Docusaurus 3](https://docusaurus.io/) to share structured insights and learning paths with the community.
 
-For the first-time setup, run:
+## 🌟 Vision & Purpose
+The goal of this wiki is to provide a central, searchable hub for high-quality information. Whether it's complex technical documentation, financial research, or curated entertainment lists, every piece of content here is vetted and structured for maximum clarity and discoverability.
+
+## 📂 Knowledge Domains
+Explore the various sections of this wiki:
+- **[Technology](./docs/technology)**: Software engineering, AI/ML, automation, and open-source explorations.
+- **[Finance](./docs/finance)**: Investment strategies, fintech, and economic research.
+- **[Startups](./docs/startups)**: Growth strategies, ecosystem analysis, and entrepreneurship.
+- **[Philosophy](./docs/philosophy)**: Mental models, ethics, and structured thought experiments.
+- **[Entertainment](./docs/entertainment)**: A comprehensive database of films, web series, and curated watchlists.
+
+## 🛠️ Local Development & Management
+
+### First-Time Setup
+To initialize the environment and install dependencies:
 ```sh
-yarn
+yarn install
 node runScripts.js
 ```
 
-For subsequent uses, simply run:
+### Running the Project
+Start the local development server:
 ```sh
-node runScripts.js
+yarn start
 ```
+Most changes are reflected live via hot-reloading.
 
-### Running the Mind Map Generator
+### Mind Map Generator
+This repository includes a custom script to visualize the documentation structure:
+1. Generate the Mermaid file: `python generate_mindmap.py`
+2. Convert to PNG: `mmdc -i mindmap.mmd -o src/generated/mindmap.png`
 
-#### Python Script: `generate_mindmap.py`
+## 🚀 Deployment
+This project is automatically deployed to GitHub Pages via GitHub Actions.
+- **Build**: `yarn build`
+- **Deploy manually**: `USE_SSH=true yarn deploy`
 
-Generates a `mindmap.mmd` file with the structure of your `docs` folder.
+## 🤝 Contributing
+Contributions are welcome! Please read our [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to add new documentation or suggest improvements.
 
-**Usage:**
-1. Ensure Python is installed:
-    ```sh
-    python --version
-    ```
-2. Navigate to the script's directory and run:
-    ```sh
-    python generate_mindmap.py
-    ```
-
-### Converting `.mmd` to Image
-
-Converts the generated `mindmap.mmd` file to a PNG image using Mermaid CLI.
-
-**Usage:**
-1. Ensure Node.js and Mermaid CLI are installed:
-    ```sh
-    node --version
-    npm install -g @mermaid-js/mermaid-cli
-    ```
-2. Navigate to the script's directory and run:
-    ```sh
-    mmdc -i mindmap.mmd -o src/generated/mindmap.png
-    ```
-
-
-    
----
-***
-___
-
-
-This website is built using [Docusaurus 3](https://docusaurus.io/), a modern static website generator.
-
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## ⚖️ Governance & Legal
+- **License**: [MIT](./LICENSE)
+- **Code of Conduct**: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+- **Security**: [SECURITY.md](./SECURITY.md)
 
 ---
-***
-___
-
-
-![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/deploy-to-github-pages.yml/badge.svg)
-![Build Status](https://github.com/suryakantamangaraj/Wiki/actions/workflows/github-code-scanning/codeql/badge.svg)
+*Maintained by [Suryakanta Mangaraj](https://github.com/suryakantamangaraj)*
