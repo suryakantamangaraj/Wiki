@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this knowledge base or its data in your work, please cite it as follows."
+authors:
+- family-names: "Mangaraj"
+  given-names: "Suryakanta"
+  orcid: "https://orcid.org/0000-0000-0000-0000" # Placeholder
+title: "Wiki: A Curated Personal Knowledge Base & Digital Garden"
+version: 1.0.0
+date-released: 2026-05-03
+url: "https://github.com/suryakantamangaraj/Wiki"
+keywords:
+  - personal wiki
+  - digital garden
+  - knowledge management
+  - docusaurus
+  - technology
+  - finance
+  - research
